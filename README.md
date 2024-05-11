@@ -61,6 +61,8 @@ This microservice records site visits by country and provides endpoints to colle
    GET /statistics
    ```
 
+Countries should be in a **ISO 3166-1 Alpha-2** standard and upper case
+
 ## Testing
 
 1. Enter docker container with project 
@@ -74,3 +76,7 @@ By default container name is:  **site_visit_app-web-1**
 ```bash
 php bin/phpunit
 ```
+
+## What can be done in addition?
+
+1. Add getting list of countries from external source to validate real countries
