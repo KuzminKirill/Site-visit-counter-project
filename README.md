@@ -61,7 +61,7 @@ This microservice records site visits by country and provides endpoints to colle
    GET /statistics
    ```
 
-Countries should be in a **ISO 3166-1 Alpha-2** standard and upper case
+Countries should be in a **ISO 3166-1 Alpha-2** standard and upper case (in becomes so in any case)
 
 ## Testing
 
