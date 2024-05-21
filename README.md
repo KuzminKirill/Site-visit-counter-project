@@ -9,8 +9,8 @@ This microservice records site visits by country and provides endpoints to colle
 
 ## Technologies Used
 
-- PHP 8.0
-- Symfony framework (ver 5.4)
+- PHP 8.3.7
+- Symfony framework (ver 7.0.7)
 - Docker for containerization
 - Redis for caching
 
@@ -61,7 +61,7 @@ This microservice records site visits by country and provides endpoints to colle
    GET /statistics
    ```
 
-Countries should be in a **ISO 3166-1 Alpha-2** standard and upper case (in becomes so in any case)
+Countries should be in a **ISO 3166-1 Alpha-2** standard and upper case (it becomes so in any case)
 
 ## Testing
 
@@ -80,3 +80,7 @@ php bin/phpunit
 ## What can be done in addition?
 
 1. Add getting list of countries from external source to validate real countries
+2. Move code from controller to service
+3. Add different type of data storage (redis will be bottleneck because it's single thread way of work). It’s worth taking some kind of database that will be fast to write and only then calculate the amount for the period in the background; here some kind of timeseries DB like clickhouse or postgres timescaledb would be more suitable.
+4. At least - update redis config in case of RDB settings
+5. We can use other way to contain statistic - one key - one county. But getting sum by using "keys", will be not the best operation in terms of performance.

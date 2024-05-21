@@ -22,6 +22,9 @@ class VisitControllerTest extends TestCase
         $this->visitController = new VisitController($redisClient);
     }
 
+    /**
+     * Test update method
+     */
     public function testUpdateValidCountry(): void
     {
         $request = new Request(content: json_encode(['country' => 'US']));
